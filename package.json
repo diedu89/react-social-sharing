@@ -92,7 +92,8 @@
   "license": "MIT",
   "dependencies": {
     "styled-components": "^4.1.1",
-    "styled-is": "^1.1.5"
+    "styled-is": "^1.1.5",
+    "ua-parser-js": "^0.7.19"
   },
   "pre-push": []
 }

@@ -1,3 +1,7 @@
+import UAParser from 'ua-parser-js';
+const UA = new UAParser();
+const whatsappProtocol = UA.getDevice().type === undefined ? 'https://web.whatsapp.com/' : 'whatsapp://';
+
 export default {
   twitter: (link = '', message = '') =>
     `https://twitter.com/intent/tweet/?text=${encodeURIComponent(
@@ -14,7 +18,7 @@ export default {
   reddit: (link: '') =>
     `https://reddit.com/submit/?url=${encodeURIComponent(link)}`,
   whatsapp: (link = '', message = '') =>
-    `whatsapp://send?text=${encodeURIComponent(message)}%20${encodeURIComponent(
+    `${whatsappProtocol}send?text=${encodeURIComponent(message)}%20${encodeURIComponent(
       link
     )}`,
   telegram: (link = '', message = '') =>
